@@ -1,4 +1,4 @@
-Generate React project:
+--- Generate React project:
 
 npx create-react-app
 
@@ -6,3 +6,24 @@ Start React project:
 
 cd create-react-app
 npm start
+
+
+
+--- Using React icons components:
+
+npm install react-icons --save
+
+import { ICONNAME } from "react-icons/LIBNAME";
+...
+<iconname></iconname>
+// or <ICONNAME />
+
+https://react-icons.github.io/react-icons/icons?name=bi
+
+https://boxicons.com/cheatsheet
+https://feathericons.com/
+https://www.freecodecamp.org/news/how-to-use-react-icons/
+
+https://fontawesome.com/v5/docs/web/use-with/react
+
+*https://mui.com/pricing/
