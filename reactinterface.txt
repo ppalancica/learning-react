@@ -67,3 +67,5 @@ with:
 npm start will run craco start
 
 // ---
+
+https://github.com/LinkedInLearning/react-interface-2880067/blob/02_04e/src/data.json
