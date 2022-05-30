@@ -1,0 +1,8 @@
+Generate React project:
+
+npx create-react-app
+
+Start React project:
+
+cd create-react-app
+npm start
