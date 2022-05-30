@@ -27,3 +27,43 @@ https://www.freecodecamp.org/news/how-to-use-react-icons/
 https://fontawesome.com/v5/docs/web/use-with/react
 
 *https://mui.com/pricing/
+
+
+
+--- Installing Tailwind CSS in React
+
+https://tailwindcss.com/docs/guides/create-react-app
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+Follow all the other steps...
+
+// ---
+
+Didn't work:
+
+npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9 @tailwindcss/forms
+
+npm install @craco/craco
+
+Inside package.json replace:
+
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
+},
+
+with:
+
+"scripts": {
+  "start": "craco start",
+  "build": "craco build",
+  "test": "craco test",
+  "eject": "react-scripts eject"
+},
+
+npm start will run craco start
+
+// ---
