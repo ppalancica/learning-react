@@ -1,0 +1,102 @@
+https://jscomplete.com/learn/1rd-reactful
+https://github.com/jscomplete/learn-fullstack-javascript
+
+
+npm init
+
+npm install express
+
+npm i mongodb
+
+npm i react react-dom
+
+npm i - D webpack webpack-cli
+
+???
+npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
+
+npm i -D nodemon
+
+npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
+
+
+
+---
+
+mkdir src
+mkdir public
+mkdir api
+
+touch src/index.js
+touch public/index.html
+touch api/index.js
+
+Add this change inside package.json:
+
+"scripts": {
+  "start": "nodemon --exec babel-node server.js --ignore public/",
+  "dev": "webpack -wd"
+},
+
+
+Add a new file webpack.config.js:
+
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve('public'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
+  }
+};
+
+Add a new file babel.config.js:
+
+module.exports = {
+  presets: ['@babel/react', '@babel/env'],
+  plugins: ['@babel/plugin-proposal-class-properties']
+};
+
+
+Add a new file .eslintrc.js:
+
+module.exports = {
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+    jest: true
+  },
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
+    sourceType: 'module'
+  },
+  plugins: ['react'],
+  rules: {
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
+    semi: ['error', 'always'],
+    'no-console': [
+      'warn',
+      { allow: ['clear', 'info', 'error', 'dir', 'trace'] }
+    ]
+  }
+};
