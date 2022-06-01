@@ -1,3 +1,5 @@
+https://stackoverflow.com/questions/24387451/how-can-i-kill-whatever-process-is-using-port-8080-so-that-i-can-vagrant-up
+
 https://jscomplete.com/learn/1rd-reactful
 https://github.com/jscomplete/learn-fullstack-javascript
 
