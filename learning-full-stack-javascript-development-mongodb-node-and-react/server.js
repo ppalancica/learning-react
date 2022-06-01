@@ -1,5 +1,6 @@
 import express from 'express';
 import config from './config';
+import apiRouter from './api';
 // import fs from 'fs';
 
 const server = express();
@@ -8,7 +9,9 @@ server.get('/', (req, res) => {
   res.send('Hello Express');
 });
 
+server.use('/api', apiRouter); // http://localhost:8080/api returns {"data":[]}
 server.use(express.static('public'));
+// http://localhost:8080/about.html
 /*server.get('/about.html', (req, res) => {
   // res.send('The about page');
   fs.readFile('./about.html', (err, data) => {
