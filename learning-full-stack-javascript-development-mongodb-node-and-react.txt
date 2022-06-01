@@ -4,6 +4,8 @@ https://github.com/jscomplete/learn-fullstack-javascript
 
 npm init
 
+// generates package.json
+
 npm install express
 
 npm i mongodb
@@ -69,7 +71,6 @@ module.exports = {
   plugins: ['@babel/plugin-proposal-class-properties']
 };
 
-
 Add a new file .eslintrc.js:
 
 module.exports = {
@@ -100,3 +101,72 @@ module.exports = {
     ]
   }
 };
+
+
+
+---
+
+Node as a Web Server
+
+./node_modules/.bin/babel-node server.js
+
+vi ~/.bash_profile
+
+Add the relative path:
+export PATH=$PATH:./node_modules/.bin
+
+babel-node server.js
+
+config.js
+---
+
+const env = process.env;
+
+// console.log('config');
+
+export default {
+  port: env.PORT || 8080
+};
+
+server.js
+---
+
+import config from './config';
+// import './config';
+
+console.log(config);
+
+Run the server:
+babel-node server.js
+
+Result should be:
+{ port: 8080 }
+
+// babel-node server.js | less
+
+--- The HTTP/HTTPS modules
+
+server.js
+---
+
+mport http from 'http';
+
+const server = http.createServer();
+
+server.listen(8080);
+
+server.on('request', (req, res) => {
+  res.write('Hello HTTP!\n');
+  setTimeout(() => {
+    res.write('I can stream!\n');
+    res.end();
+  }, 3000);
+});
+
+Run in terminal:
+babel-node server.js
+
+Run in second terminal:
+curl http://localhost:8080/
+Hello HTTP!
+I can stream!
