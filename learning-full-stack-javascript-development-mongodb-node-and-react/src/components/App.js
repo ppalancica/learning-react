@@ -11,6 +11,17 @@ class App extends React.Component {
   //   super(props);
   //   this.state = { test: 42 };
   // }
+
+  componentDidMount() {
+    // Ajax calls, timers, listeners to other events etc.
+    console.log('componentDidMount()...');
+  }
+
+  componentWillUnmount() {
+    // clean timers, listeners
+    console.log('componentWillUnmount()...');
+  }
+
   render() {
     return (
       <div className="App">

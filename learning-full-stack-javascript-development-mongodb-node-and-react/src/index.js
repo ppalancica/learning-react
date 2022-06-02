@@ -15,6 +15,13 @@ root.render(
   <App headerMessage="Hello props" />
 );
 
+// To force component unmount
+setTimeout(() => {
+  root.render(
+    <h2>:::</h2>
+  );
+}, 4000);
+
 /*const App = () => {
   return (
     <h2 className="text-center" style={{color: color}}>
