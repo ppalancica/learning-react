@@ -2,29 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 // https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
-
-const color = Math.random() > 0.5 ? 'green' : 'red';
+import App from './components/App';
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-
-const Header = ({ message }) => {
-  return (
-    <h2 className="Header text-center" style={{color: color}}>
-      {message}
-    </h2>
-  );
-};
-
-const App = () => {
-  return (
-    <div className="App">
-      <Header message="Naming Contests" />
-      <div>
-      </div>
-    </div>
-  );
-};
 
 // App.propTypes = {
 //   headerMessage: React.PropTypes.string
