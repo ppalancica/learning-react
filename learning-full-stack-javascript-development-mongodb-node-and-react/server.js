@@ -5,8 +5,16 @@ import apiRouter from './api';
 
 const server = express();
 
+// https://ejs.co/
+// npm install -S ejs
+server.set('view engine', 'ejs');
+
 server.get('/', (req, res) => {
-  res.send('Hello Express');
+  //res.send('Hello Express');
+  //res.render('index');
+  res.render('index', {
+    content: 'Hello Express and <em>EJS</em>!'
+  });
 });
 
 server.use('/api', apiRouter); // http://localhost:8080/api returns {"data":[]}

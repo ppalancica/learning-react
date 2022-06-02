@@ -172,3 +172,10 @@ Run in second terminal:
 curl http://localhost:8080/
 Hello HTTP!
 I can stream!
+
+
+---
+
+// babel-node server.js
+
+npm start
