@@ -237,3 +237,7 @@ npm i -S node-sass-middleware
 Install axios:
 
 npm i -S axios
+
+
+
+--- Rendering on the Server
