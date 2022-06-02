@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 // https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
 import App from './components/App';
+import data from './testData.json';
+
+/* Didn't work
+import data from './testData.json';
+console.log(data);
+*/
 
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
@@ -12,8 +18,12 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 // };
 
 root.render(
-  <App headerMessage="Hello props" />
+  <App contests={data.contests} />
 );
+
+// root.render(
+//   <App headerMessage="Hello props" />
+// );
 
 // To force component unmount
 setTimeout(() => {

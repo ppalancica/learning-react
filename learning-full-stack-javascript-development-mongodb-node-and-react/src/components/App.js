@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+//import data from '../testData.json';
 
 // If we need to use state or lif-cycle of the component
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
   componentDidMount() {
     // Ajax calls, timers, listeners to other events etc.
     console.log('componentDidMount()...');
+    //console.log(data);
   }
 
   componentWillUnmount() {

@@ -3,6 +3,11 @@ https://stackoverflow.com/questions/24387451/how-can-i-kill-whatever-process-is-
 https://jscomplete.com/learn/1rd-reactful
 https://github.com/jscomplete/learn-fullstack-javascript
 
+/*
+npm run dev
+npm start
+*/
+
 
 npm init
 
@@ -199,3 +204,20 @@ npm run dev
 npm start
 
 Open http://localhost:8080/ to test.
+
+
+
+--- Working with Data
+
+We need a way for webpack to understand JSON data:
+npm i -S json-loader
+
+add to webpack.config.js (didn't work):
+
+{
+  test: /\.json$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'json-loader'
+  }
+}
