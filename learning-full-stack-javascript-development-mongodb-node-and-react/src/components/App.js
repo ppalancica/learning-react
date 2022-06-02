@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 //import data from '../testData.json';
+import ContestPreview from './ContestPreview';
 
 // If we need to use state or lif-cycle of the component
 class App extends React.Component {
@@ -29,11 +30,26 @@ class App extends React.Component {
       <div className="App">
         <Header message={this.state.pageHeader} />
         <div>
+          {this.props.contests.map(contest =>
+            <ContestPreview {...contest} />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  //<ContestPreview {...this.props.contests[0]} />
+
+  /*render() {
+    return (
+      <div className="App">
+        <Header message={this.state.pageHeader} />
+        <div>
           {this.state.test}
         </div>
       </div>
     );
-  }
+  }*/
 }
 // We can change the component's state from the browser's console:
 // $r.setState({pageHeader: "Some text"})

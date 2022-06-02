@@ -2,12 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
 // https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
+import data from './testData.json';
 import App from './components/App';
-import data from './testData.json';
 
-/* Didn't work
-import data from './testData.json';
+/* Didn't work. Maybe webpack was not configured correctly.
+import data from './testData';
 console.log(data);
+
+data.contests actually got initailized if using:
+import data from './testData.json';
+just console would not log it
+
+We need a way for webpack to understand JSON data:
+npm i -S json-loader
+
+{
+  test: /\.json$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'json-loader'
+  }
+}
+
+Maybe look here:
+https://www.pluralsight.com/guides/load-a-json-file-with-es6-modules-implementation
+
 */
 
 const container = document.getElementById('root');
@@ -26,11 +45,12 @@ root.render(
 // );
 
 // To force component unmount
-setTimeout(() => {
+/*setTimeout(() => {
   root.render(
     <h2>:::</h2>
   );
 }, 4000);
+*/
 
 /*const App = () => {
   return (
