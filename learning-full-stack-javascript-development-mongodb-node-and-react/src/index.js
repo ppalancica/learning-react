@@ -39,7 +39,7 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(
   // <App contests={data.contests} />
   // <App contests={[]} />
-  <App />
+  <App initialContests={[]} />
 );
 
 // root.render(

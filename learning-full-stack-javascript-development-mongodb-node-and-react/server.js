@@ -16,14 +16,22 @@ server.use(sassMiddleware({
 // npm install -S ejs
 server.set('view engine', 'ejs');
 
-import './serverRender';
+// import './serverRender';
+import serverRender from './serverRender';
 
 server.get('/', (req, res) => {
+  serverRender()
+    .then(content => {
+      res.render('index', {
+        content
+      });
+    })
+    .catch(console.error)
   //res.send('Hello Express');
   //res.render('index');
-  res.render('index', {
-    content: 'Hello Express and <em>EJS</em>!'
-  });
+  // res.render('index', {
+  //   content: 'Hello Express and <em>EJS</em>!'
+  // });
 });
 
 server.use('/api', apiRouter); // http://localhost:8080/api returns {"data":[]}
