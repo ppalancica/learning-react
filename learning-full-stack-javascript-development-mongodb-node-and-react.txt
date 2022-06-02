@@ -179,3 +179,23 @@ I can stream!
 // babel-node server.js
 
 npm start
+
+
+https://ejs.co/
+https://koajs.com/
+https://hapi.dev/
+https://sailsjs.com/
+https://github.com/pugjs/pug
+https://handlebarsjs.com/
+
+
+
+---
+
+To generate the bundle inside the public/bundle.js file (webpack should do the job), use:
+
+npm run dev
+
+npm start
+
+Open http://localhost:8080/ to test.
