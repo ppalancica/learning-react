@@ -1,5 +1,11 @@
 https://stackoverflow.com/questions/24387451/how-can-i-kill-whatever-process-is-using-port-8080-so-that-i-can-vagrant-up
 
+!https://www.pluralsight.com/guides/load-a-json-file-with-es6-modules-implementation
+https://github.com/webpack-contrib/json-loader
+https://www.delftstack.com/howto/react/react-import-json-file/
+*https://aglowiditsolutions.com/blog/react-webpack/
+
+
 https://jscomplete.com/learn/1rd-reactful
 https://github.com/jscomplete/learn-fullstack-javascript
 
@@ -221,3 +227,9 @@ add to webpack.config.js (didn't work):
     loader: 'json-loader'
   }
 }
+
+
+Sass
+https://sass-lang.com/
+
+npm i -S node-sass-middleware
