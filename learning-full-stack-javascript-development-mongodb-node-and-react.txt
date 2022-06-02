@@ -233,3 +233,7 @@ Sass
 https://sass-lang.com/
 
 npm i -S node-sass-middleware
+
+Install axios:
+
+npm i -S axios
