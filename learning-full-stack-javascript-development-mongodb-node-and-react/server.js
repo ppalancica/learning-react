@@ -21,6 +21,17 @@ import serverRender from './serverRender';
 
 server.get('/', (req, res) => {
   serverRender()
+    .then(({ initialMarkup, initialData }) => {
+      res.render('index', {
+        initialMarkup,
+        initialData
+      });
+    })
+    .catch(console.error)
+})
+
+/*server.get('/', (req, res) => {
+  serverRender()
     .then(content => {
       res.render('index', {
         content
@@ -33,6 +44,7 @@ server.get('/', (req, res) => {
   //   content: 'Hello Express and <em>EJS</em>!'
   // });
 });
+*.
 
 server.use('/api', apiRouter); // http://localhost:8080/api returns {"data":[]}
 server.use(express.static('public'));

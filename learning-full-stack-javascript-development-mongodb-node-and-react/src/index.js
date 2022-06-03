@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 // https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html#updates-to-client-rendering-apis
 import data from './testData.json';
 import App from './components/App';
+import axios from 'axios';
 
 /* Didn't work. Maybe webpack was not configured correctly.
 import data from './testData';
@@ -37,10 +38,26 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 // };
 
 root.render(
+  <App initialContests={window.initialData.contests} />
+);
+
+/*axios.get('/api/contests')
+  .then(resp => {
+    root.render(
+      <App initialContests={resp.data.contests} />
+    );
+    // this.setState({
+    //   contests: data.contests
+    // });
+  })
+*/
+
+/*root.render(
   // <App contests={data.contests} />
   // <App contests={[]} />
   <App initialContests={[]} />
 );
+*/
 
 // root.render(
 //   <App headerMessage="Hello props" />

@@ -11,6 +11,9 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    
+  }
+  componentDidMount_v1() {
     axios.get('/api/contests')
       .then(resp => {
         console.log(resp.data.contests);
